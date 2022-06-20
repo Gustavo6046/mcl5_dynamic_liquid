@@ -344,14 +344,7 @@ if springs then
 			end
 		end
 	})
-	
-	local spring_sounds = nil
-	if default.node_sound_gravel_defaults ~= nil then
-		spring_sounds = default.node_sound_gravel_defaults()
-	elseif default.node_sound_sand_defaults ~= nil then
-		spring_sounds = default.node_sound_dirt_defaults()
-	end
-	
+
 	-- This is a creative-mode only node that produces a modest amount of water continuously no matter where it is.
 	-- Allow this one to turn into "unknown node" when this feature is disabled, since players had to explicitly place it.
 	minetest.register_node("mcl5_dynamic_liquid:spring", {
@@ -364,7 +357,6 @@ if springs then
 			},
 		is_ground_content = false,
 		groups = {cracky = 3, stone = 2},
-		sounds = spring_sounds,
 	})
 	
 	minetest.register_abm({
