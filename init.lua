@@ -168,18 +168,18 @@ local springs = minetest.settings:get_bool("dynamic_liquid_springs", true)
 if water then
 	-- override water_source and water_flowing with liquid_renewable set to false
 	local override_def = {liquid_renewable = false}
-	minetest.override_item("default:water_source", override_def)
-	minetest.override_item("default:water_flowing", override_def)
+	minetest.override_item("mcl_core:water_source", override_def)
+	minetest.override_item("mcl_core:water_flowing", override_def)
 end
 
 if lava then
-	dynamic_liquid.liquid_abm("default:lava_source", "default:lava_flowing", lava_probability)
+	dynamic_liquid.liquid_abm("mcl_core:lava_source", "mcl_core:lava_flowing", lava_probability)
 end
 if water then
-	dynamic_liquid.liquid_abm("default:water_source", "default:water_flowing", water_probability)
+	dynamic_liquid.liquid_abm("mcl_core:water_source", "mcl_core:water_flowing", water_probability)
 end
 if river_water then	
-	dynamic_liquid.liquid_abm("default:river_water_source", "default:river_water_flowing", river_water_probability)
+	dynamic_liquid.liquid_abm("mclx_core:river_water_source", "mclx_core:river_water_flowing", river_water_probability)
 end
 
 -- Flow-through nodes
