@@ -318,12 +318,12 @@ clay_def.description = S("Damp Clay")
 if not springs then
 	clay_def.groups.not_in_creative_inventory = 1 -- take it out of creative inventory though
 end
-minetest.register_node("dynamic_liquid:clay", clay_def)
+minetest.register_node("mcl5_dynamic_liquid:clay", clay_def)
 
 if springs then	
 	minetest.register_abm({
 		label = "dynamic_liquid damp clay spring",
-		nodenames = {"dynamic_liquid:clay"},
+		nodenames = {"mcl5_dynamic_liquid:clay"},
 		neighbors = {"air", "mcl_core:water_source", "mcl_core:water_flowing"},
 		interval = 1,
 		chance = 1,
@@ -354,7 +354,7 @@ if springs then
 	
 	-- This is a creative-mode only node that produces a modest amount of water continuously no matter where it is.
 	-- Allow this one to turn into "unknown node" when this feature is disabled, since players had to explicitly place it.
-	minetest.register_node("dynamic_liquid:spring", {
+	minetest.register_node("mcl5_dynamic_liquid:spring", {
 		description = S("Spring"),
 		_doc_items_longdesc = S("A natural spring that generates an endless stream of water source blocks"),
 		_doc_items_usagehelp = S("Generates one source block of water directly on top of itself once per second, provided the space is clear. If this natural spring is dug out the flow stops and it is turned into ordinary cobble."),
@@ -369,7 +369,7 @@ if springs then
 	
 	minetest.register_abm({
 		label = "dynamic_liquid creative spring",
-		nodenames = {"dynamic_liquid:spring"},
+		nodenames = {"mcl5_dynamic_liquid:spring"},
 		neighbors = {"air", "mcl_core:water_flowing"},
 		interval = 1,
 		chance = 1,
@@ -391,7 +391,7 @@ if springs or mapgen_prefill then
 	local data = {}
 
 	local c_clay = minetest.get_content_id("mcl_core:clay")
-	local c_spring_clay = minetest.get_content_id("dynamic_liquid:clay")
+	local c_spring_clay = minetest.get_content_id("mcl5_dynamic_liquid:clay")
 	local c_water = minetest.get_content_id("mcl_core:water_source")
 	local c_air = minetest.get_content_id("air")
 	local waternodes = {}
