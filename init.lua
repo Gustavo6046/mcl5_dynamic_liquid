@@ -289,6 +289,75 @@ if flow_through then
 		add_flow_through("carts:powerrail")
 		add_flow_through("carts:brakerail")
 	end
+
+    -- MineClone flow-through predefinitions
+	-------------------------------------------
+
+	if minetest.get_modpath("mcl_core") then
+	    add_flow_through("mcl_core:reeds")
+	    add_flow_through("mcl_core:cactus")
+	    add_flow_through("mcl_core:ladder")
+	end
+
+	if minetest.get_modpath("mcl_signs") then
+        add_flow_through("mcl_signs:wall_sign")
+        add_flow_through("mcl_signs:standing_sign")
+    end
+
+    if minetest.get_modpath("mcl_stairs") then
+        add_flow_through("mcl_signs:wall_sign")
+        add_flow_through("mcl_signs:standing_sign")
+    end
+
+    -- Big ol list of slab and stair materials :D
+
+    function register_material_block_flow_through(subname)
+        add_flow_through("mcl_stairs:stair_" .. subname)
+        add_flow_through("mcl_stairs:slab_" .. subname)
+        add_flow_through("mcl_stairs:slab_" .. subname .. "_top")
+        add_flow_through("mcl_stairs:slab_" .. subname .. "_double")
+    end
+
+    register_material_block_flow_through("stone_rough")
+    register_material_block_flow_through("andesite")
+    register_material_block_flow_through("granite")
+    register_material_block_flow_through("diorite")
+    register_material_block_flow_through("cobble")
+    register_material_block_flow_through("mossycobble")
+    register_material_block_flow_through("brick_block")
+    register_material_block_flow_through("sandstone")
+    register_material_block_flow_through("sandstonesmooth2")
+    register_material_block_flow_through("redsandstone")
+    register_material_block_flow_through("redsandstonesmooth2")
+    register_material_block_flow_through("stonebrick")
+    register_material_block_flow_through("quartzblock")
+    register_material_block_flow_through("quartz_smooth")
+    register_material_block_flow_through("nether_brick")
+    register_material_block_flow_through("red_nether_brick")
+    register_material_block_flow_through("end_bricks")
+    register_material_block_flow_through("purpur_block")
+    register_material_block_flow_through("prismarine")
+    register_material_block_flow_through("prismarine_brick")
+    register_material_block_flow_through("prismarine_dark")
+    register_material_block_flow_through("andesite_smooth")
+    register_material_block_flow_through("granite_smooth")
+    register_material_block_flow_through("diorite_smooth")
+    register_material_block_flow_through("stonebrickmossy")
+    register_material_block_flow_through("warped_hyphae_wood")
+    register_material_block_flow_through("crimson_hyphae_wood")
+    register_material_block_flow_through("deepslate_cobbled")
+    register_material_block_flow_through("deepslate_polished")
+    register_material_block_flow_through("deepslate_bricks")
+    register_material_block_flow_through("deepslate_tiles")
+    register_material_block_flow_through("deepslate_chiseled")
+    register_material_block_flow_through("copper_cut")
+    register_material_block_flow_through("copper_exposed_cut")
+    register_material_block_flow_through("copper_oxidized_cut")
+    register_material_block_flow_through("copper_weathered_cut")
+    register_material_block_flow_through("blackstone")
+    register_material_block_flow_through("blackstone_polished")
+    register_material_block_flow_through("blackstone_chiseled_polished")
+    register_material_block_flow_through("blackstone_brick_polished")
 end
 
 
