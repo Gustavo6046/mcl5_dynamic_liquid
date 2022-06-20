@@ -308,6 +308,13 @@ if flow_through then
         add_flow_through("mcl_signs:wall_sign")
         add_flow_through("mcl_signs:standing_sign")
     end
+
+    if minetest.get_modpath("mesecons_pressureplates") then
+        add_flow_through("mesecons_pressureplates:pressure_plate_stone")
+        add_flow_through("mesecons_pressureplates:pressure_plate_polished_blackstone")
+        add_flow_through("mesecons_pressureplates:pressure_plate_gold")
+        add_flow_through("mesecons_pressureplates:pressure_plate_iron")
+    end
 end
 
 
